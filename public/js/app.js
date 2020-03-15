@@ -7,11 +7,11 @@ weatherForm.addEventListener('submit', (e) => {
     goodMessage.innerText="";
     errorMessage.innerText="Loading...";
     const search = e.target.children.address.value;
-    fetch(`http://localhost:3000/weather?address=${search}`).then((response) => {
+    fetch(`/weather?address=${search}`).then((response) => {
         response.json().then((data) => {
             if (data.error) {
                 goodMessage.innerText="";
-                errorMessage.innerText=data.error
+                errorMessage.innerText=data.errorgit
                
             } else {
                 const { forecastData, location } = data
